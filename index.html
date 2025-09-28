@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate Verification</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6f9; text-align: center; padding: 50px; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: inline-block; }
+    input { padding: 10px; width: 200px; margin: 10px 0; }
+    button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .result { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Certificate Verification</h2>
+    <p>Enter your Roll / Registration Number</p>
+    <input type="text" id="roll" placeholder="e.g. 12345">
+    <br>
+    <button onclick="checkCertificate()">Check</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkCertificate() {
+      const roll = document.getElementById("roll").value.trim();
+      const result = document.getElementById("result");
+
+      // এখানে আপনার রোল নাম্বার আর PDF ফাইল link বসান
+      if (roll === "12345") {
+        result.innerHTML = '✅ Certificate Found <br><a href="certificate.pdf" target="_blank">View Certificate</a>';
+      } else {
+        result.innerHTML = "❌ Certificate Not Found";
+      }
+    }
+  </script>
+</body>
+</html>
